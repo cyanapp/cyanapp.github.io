@@ -1,9 +1,15 @@
 body {
-  background-color: powderblue;
+ 
+  background-color: #f1f1f1;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 }
 h1 {
-  color: blue;
+  color: black;
 }
 p {
-  color: red;
+  color: black;
 }
+
+
