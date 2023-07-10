@@ -16,14 +16,9 @@
     <input id="example-input" name="example-input" />
     <canvas id="example-canvas" width="500" height="500"></canvas>
 
-
-        <input id="example-input1" name="example-input1" />
-    <canvas id="example-canvas1" width="500" height="500"></canvas>
-
     
     <script src="https://unpkg.com/smiles-drawer@1.0.10/dist/smiles-drawer.min.js"></script>
     <script>
-      let input = document.getElementById("example-input1");
       let input = document.getElementById("example-input");
       let options = {};
 
@@ -32,7 +27,6 @@
       // Alternatively, initialize the SVG drawer:
       // let svgDrawer = new SmilesDrawer.SvgDrawer(options);
 
-      input.addEventListener("input", function() {
         // Clean the input (remove unrecognized characters, such as spaces and tabs) and parse it
         SmilesDrawer.parse(input.value, function(tree) {
           // Draw to the canvas
