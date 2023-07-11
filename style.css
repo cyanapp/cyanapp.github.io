@@ -16,12 +16,12 @@ body{
 
 
 .main{
- width: 100%;
+    width: 100%;
     padding-top: 5%;
-        padding-left: 5%;
-        padding-right: 5%;
-        padding-bottom: 5%;
-    text-align: left;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    ext-align: left;
 }
 
 
