@@ -22,6 +22,13 @@ body{
     ext-align: left;
 }
 
+.mainbody{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-right: 3%;
+    margin-left: 3%;
+    ext-align: center;
+}
 
 h2,.white{
     color: #fff;
