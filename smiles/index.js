@@ -55,7 +55,7 @@ function display_images(response){
 }
 
 async function SearchPhotos(query, page_num){
-    const data=await fetch(`https://api.pexels.com/v1/search?query=${query}&page=${page_num}`, 
+    const data=await fetch(`http://hulab.rxnfinder.org/smi2img/${query}`, 
     {
         method: "GET",
         headers: {
