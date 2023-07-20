@@ -1,30 +1,20 @@
-<!DOCTYPE html>
-<html>
+ <html>
     <head>
-        <!--META information-->
-        <meta charset="UTF-8">
-        <meta name="description" content="Image Search App">
-        <meta name="keywords" content="HTML,CSS,JavaScript, images, API">
-        <meta name="author" content="Neha Soni">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--End of META information-->
-        <title>Image Search App</title>
-        <!--LINK CUSTOM CSS FILE-->
-        <link rel="stylesheet" href="./style.css"> 
+     <script type="text/javascript">
+     function ExampleJS(){
+        var jFirst = document.getElementById("fname").value;
+        var jLast = document.getElementById("lname").value;
+        alert("Your name is: " + jFirst + " " + jLast);
+     }
+     </script>
+
     </head>
     <body>
-        <h1>Image Search Gallery </h1>
-        <div class="container">
-            <!--Input box to take input from User-->
-            <input type="text" class="input" placeholder="Search for Images🔎"/>
-            <button class="search_btn">Search</button>
-           
-            <!--Images to be displayed here-->
-            <div class="display_images"></div>
-            <!--Button to load more images-->
-            <button class="showmore">Show More</button>
-        </div>
-        <!--LINK CUSTOM JS FILE-->
-        <script src="./index.js"></script>
+        <FORM NAME="myform" onSubmit="JavaScript:ExampleJS()">
+
+             First name: <input type="text" id="fname" name="firstname" /><br />
+             Last name:  <input type="text" id="lname" name="lastname" /><br />
+            <input name="Submit"  type="submit" value="Update" />
+        </FORM>
     </body>
 </html>
