@@ -1,34 +1,30 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
     <head>
-	<meta charset="utf-8">
-
-	<title>Load gif and images</title>	
+        <!--META information-->
+        <meta charset="UTF-8">
+        <meta name="description" content="Image Search App">
+        <meta name="keywords" content="HTML,CSS,JavaScript, images, API">
+        <meta name="author" content="Neha Soni">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--End of META information-->
+        <title>Image Search App</title>
+        <!--LINK CUSTOM CSS FILE-->
+        <link rel="stylesheet" href="./style.css"> 
     </head>
     <body>
-	<header>
-            <h1>Search for gifs</h1>
-	</header>
-	<!--Section with input for search-->
-
-
-	    
-	<section id="for-search">
-
-		<form action="javascript: main.js;" onsubmit="return searchgif()">
-            <form>
-		<input type="text" name="search" placeholder="type your text here" class="search" id="search">
-            </form>
-            <button id="button">SUBMIT</button>
-
-	</section>
-	<!--END search section-->
-	<!--Section to display gifs for searched word-->
-	<section id="layout">
-            <div id="result">
-            </div>
-	</section>
-	<!--END display section-->
-
+        <h1>Image Search Gallery </h1>
+        <div class="container">
+            <!--Input box to take input from User-->
+            <input type="text" class="input" placeholder="Search for Images🔎"/>
+            <button class="search_btn">Search</button>
+           
+            <!--Images to be displayed here-->
+            <div class="display_images"></div>
+            <!--Button to load more images-->
+            <button class="showmore">Show More</button>
+        </div>
+        <!--LINK CUSTOM JS FILE-->
+        <script src="./index.js"></script>
     </body>
 </html>
