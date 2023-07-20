@@ -30,7 +30,7 @@ function cleargallery(){
 
 async function CuratedPhotos(page_num){
     // fetch the data from api
-    const data=await fetch(`https://api.pexels.com/v1/curated?page=${page_num}`, 
+    const data=await fetch(`http://hulab.rxnfinder.org/smi2img/${page_num}`, 
     {
         method: "GET",
         headers: {
