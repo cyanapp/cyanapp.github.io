@@ -1,148 +1,29 @@
+<!doctype html>
+<html lang="en">
+    <head>
+	<meta charset="utf-8">
 
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="utf-8">
-    <title>Convert Smiles To Image - Online Tool</title>
+	<title>Load gif and images</title>	
+    </head>
+    <body>
+	<header>
+            <h1>Search for gifs</h1>
+	</header>
+	<!--Section with input for search-->
+	<section id="for-search">
+            <form>
+		<input type="text" name="search" placeholder="type your text here" class="search" id="search">
+            </form>
+            <button id="button">SUBMIT</button>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="keywords" content="Convert smiles to image, online tool">
-    <meta name="description" content="Convert smiles to image, online tool">
-    <meta name="author" content="WeizhongTu">
-
-
-    <link rel="stylesheet" href="https://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
-    <script src="https://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <style type="text/css">
-        .navbar .nav > li .dropdown-menu {
-            margin: 0;
-        }
-
-        .navbar .nav > li:hover .dropdown-menu {
-            display: block;
-        }
-
-        body {
-            padding-top: 60px;
-        }
-
-        /* column same height */
-        #my-row {
-            display: table;
-        }
-
-        #my-row .panel {
-            float: none;
-            display: table-cell;
-            vertical-align: top;
-        }
-    </style>
-</head>
-
-<body>
-<div class="container">
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <span class="navbar-brand">HuLab</span>
+	</section>
+	<!--END search section-->
+	<!--Section to display gifs for searched word-->
+	<section id="layout">
+            <div id="result">
             </div>
+	</section>
+	<!--END display section-->
 
-
-
-    <div class="row clearfix">
-        <div class="col-md-12">
-            <!--[if lt IE 8]>
-            <div class="alert alert-warning alert-dismissable">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <h4> WARNING! </h4> <strong>Your browser is too old and may not display the page correctly. Please
-                upgrade to</strong>
-                <a href="http://www.google.cn/intl/zh-CN/chrome/" target="_blank">Chrome</a> or
-                <a href="www.mozilla.org/en-US/firefox/‎" target="_blank">Firefox</a> /
-                <a href="http://www.apple.com.cn/safari/" target="_blank">Safari</a> /
-                <a href="http://www.opera.com/" target="_blank">Opera</a> /
-                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="_blank">Internet
-                    Explorer 11</a>
-            </div>
-            <![endif]-->
-        </div>
-    </div>
-
-
-    <div class="row">
-        <div class="panel text-center"
-             style="background-color: rgb(247, 255, 251);color: rgb(0, 143, 0);text-shadow: 2px 2px 15px rgb(0, 236, 38);">
-            <div class="panel-body text-center">
-                <h1>Convert Smiles To Image</h1>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="row" id="my-row">
-        <div class="col-md-4 panel" style="background: rgb(250, 250, 250);">
-            <h3> Smiles To Image: </h3>
-
-            <p>
-                Author: WeizhongTu<br>
-                Version: 1.0.0 beta<br><br>
-                Features:<br>
-                1. Generate image in real-time, API provided.<br>
-                2. Never write image file to hard disk, more quickly.<br>
-            </p>
-        </div>
-
-        <div class="col-md-8 panel" style="background: rgb(228, 228, 255);">
-            <strong>API:</strong><br>
-            http://hulab.rxnfinder.org/smi2img/<strong>molecule-smiles</strong>/<br>
-            such as <a href="http://hulab.rxnfinder.org/smi2img/CCC(=O)OCC/" target="_blank">http://hulab.rxnfinder.org/smi2img/<strong>CCC(=O)OCC</strong>/</a><br>
-
-            <a href="http://hulab.rxnfinder.org/smi2img/c1ccccc1C(=O)OCC/?width=100&height=100" target="_blank">http://hulab.rxnfinder.org/smi2img/c1ccccc1C(=O)OCC/<strong>?width=100&height=100</strong></a>
-            </p>
-            <input id='smiles' onkeyup="get_image();" type="text" value="c1ccccc1C(=O)OCC">
-            <!--<input type="button" onclick="get_image();" value="submit">-->
-
-            <p><img id="image" src="/smi2img/c1ccccc1C(=O)OCC/"></p>
-        </div>
-    </div>
-
-    <div class="row" style="margin-top:20px;">
-        <div class="col-md-12 panel panel-default" style="background: rgb(237, 246, 255);">
-            <div class="panel-body">
-                <ul class="list-inline pull-right">
-                    <li><a href="http://hulab.lifemodules.org/">Hu Lab</a></li>
-                    <li><a href="http://pharmacy.whu.edu.cn/">College of Pharmacy</a></li>
-                    <li><a href="http://www.whu.edu.cn/">Wuhan University</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="https://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
-<script type="text/javascript">
-    var image = document.getElementById('image');
-    var smiles = document.getElementById('smiles');
-    function get_image() {
-        image.src = "/smi2img/" + escape(smiles.value);
-    }
-</script>
-</body>
+    </body>
 </html>
-
