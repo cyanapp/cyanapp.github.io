@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Search</title>
+</head>
+<body>
+    <h1>Image Search</h1>
+    <form onsubmit="openNewWindow(event)">
+        <input type="text" id="keywordInput" placeholder="Enter keyword">
+        <button type="submit">Search</button>
+    </form>
+
+    <script>
+        function openNewWindow(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const keyword = document.getElementById('keywordInput').value;
+            const searchUrl = `http://hulab.rxnfinder.org/smi2img/${encodeURIComponent(keyword)}`;
+            const newWindow = window.open(searchUrl, '_blank');
+
+            // You can optionally focus on the new window if you want.
+            // newWindow.focus();
+        }
+    </script>
+</body>
+</html>
