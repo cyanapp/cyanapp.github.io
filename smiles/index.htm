@@ -1,24 +1,43 @@
- <html>
-    <head>  
-     <script type="text/javascript">
-     function ExampleJS(){
-        var jFirst = document.getElementById("fname").value;
-        var jLast = document.getElementById("lname").value;
-        window.location.href="http://hulab.rxnfinder.org/smi2img/${jFirst}";  
-     
-     }
-     </script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smile Search</title>
+</head>
+<body>
+    <h1>Smile Search</h1>
+    <input type="text" id="keywordInput" placeholder="Enter keyword">
+    <button onclick="performSearch()">Get structure</button>
 
-    </head>
-    <body>
-        <FORM NAME="myform" onSubmit="JavaScript:ExampleJS()">
+    <div id="searchResults"></div>
 
-             First name: <input type="text" id="fname" name="firstname" /><br />
-             Last name:  <input type="text" id="lname" name="lastname" /><br />
-            <input name="Submit"  type="submit" value="Update" />
-        </FORM>
+    <script>
+        function performSearch() {
+            const keyword = document.getElementById('keywordInput').value;
+            const searchUrl = `https://cdb.ics.uci.edu/arrow-webapp/ArrowWebService?action=smi2png&smiles=${encodeURIComponent(keyword)}`;
 
-     <div id="output"></div>
-     
-    </body>
+            //https://cdb.ics.uci.edu/arrow-webapp/ArrowWebService?action=smi2png&smiles=c1ccccc1O
+            //http://hulab.rxnfinder.org/smi2img/
+
+            // In this example, we simulate getting search results with a dummy array
+            const searchResults = [
+                { title: keyword, url: searchUrl },
+
+            ];
+
+            // Clear previous search results
+            const searchResultsDiv = document.getElementById('searchResults');
+            searchResultsDiv.innerHTML = '';
+
+            // Display the search results in a new div
+            searchResults.forEach(result => {
+                const resultDiv = document.createElement('div');
+                resultDiv.innerHTML = `
+                    <h3>${result.title}</h3>
+                    <img src="${result.url}" alt="${result.title}">
+                `;
+                searchResultsDiv.appendChild(resultDiv);
+            });
+        }
+    </script>
+</body>
 </html>
