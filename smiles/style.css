@@ -1,4 +1,36 @@
-* 
+/* global */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.grid-2{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #101214;
+    color: #7A7C80;
+}
+
+.main{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-right: 3%;
+    margin-left: 3%;
+    ext-align: left;
+}
+
+.mainbody{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-right: 3%;
+    margin-left: 3%;
+    text-align: center;
+    width: 90%;
+}
+
 {
     margin: 0;
     padding: 0;
@@ -60,3 +92,5 @@ button{
     margin: 0 auto;
   display: block;
 }
+
+
